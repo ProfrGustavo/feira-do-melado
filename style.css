@@ -153,9 +153,21 @@ section h2::after {
 
 .img-placeholder {
     background-color: var(--marrom-claro);
-    height: 300px;
+    width: 40vw; /* um pouco menos que a metade da tela */
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2; /* mantém proporção similar a 3000x2000 */
     border-radius: 8px;
     position: relative;
+    overflow: hidden;
+}
+
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ajusta a imagem pra preencher mantendo o corte */
+    border-radius: 8px;
+    display: block;
 }
 
 .img-placeholder::before {
@@ -165,7 +177,13 @@ section h2::after {
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--preto-suave);
+    z-index: 1;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 4px 8px;
+    border-radius: 4px;
 }
+
 
 /* Programação */
 .cards {
