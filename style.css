@@ -1,0 +1,265 @@
+/* Paleta de cores inspirada em melado e agricultura */
+:root {
+    --melado-dourado: #C28E0E;
+    --marrom-escuro: #8B4513;
+    --verde-oliva: #556B2F;
+    --verde-claro: #7CB342;
+    --amarelo-dourado: #F9A825;
+    --bege-claro: #F5F0E1;
+    --marrom-claro: #D7CCC8;
+    --branco: #FFFFFF;
+    --preto-suave: #333333;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--preto-suave);
+    background-color: var(--bege-claro);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--melado-dourado);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--branco);
+    font-size: 1.8rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--marrom-escuro);
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x500');
+    background-size: cover;
+    background-position: center;
+    color: var(--branco);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--amarelo-dourado);
+    color: var(--preto-suave);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--verde-oliva);
+    color: var(--branco);
+}
+
+/* Seções */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--marrom-escuro);
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--melado-dourado);
+    margin: 10px auto;
+}
+
+/* Sobre */
+.sobre-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.sobre-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.sobre-text p {
+    margin-bottom: 15px;
+}
+
+.sobre-img {
+    flex: 1;
+    min-width: 300px;
+}
+
+.img-placeholder {
+    background-color: var(--marrom-claro);
+    height: 300px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.img-placeholder::before {
+    content: 'Imagem da Feira';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--preto-suave);
+}
+
+/* Programação */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--branco);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    border-top: 5px solid var(--verde-oliva);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--melado-dourado);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--marrom-claro);
+    padding-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+/* Contato */
+.contato {
+    background-color: var(--marrom-claro);
+}
+
+.contato-info {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contato-info p {
+    margin-bottom: 15px;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--marrom-escuro);
+    color: var(--branco);
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+    
+    .banner {
+        padding: 60px 0;
+    }
+    
+    .banner h2 {
+        font-size: 2rem;
+    }
+    
+    .sobre-content, .cards {
+        flex-direction: column;
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+}
